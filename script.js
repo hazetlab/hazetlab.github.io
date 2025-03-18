@@ -1,7 +1,7 @@
 function downloadFiles(files) {
     files.forEach(file => {
         const link = document.createElement('a');
-        link.href = `zerfithel/media/${file}`;
+        link.href = `media/${file}`;
         link.download = file;
         document.body.appendChild(link);
         link.click();
@@ -55,7 +55,7 @@ function startVideoWindowInterval() {
 }
 
 function playBackgroundMusic() {
-    const audio = new Audio('zerfithel/media/video.mp4');
+    const audio = new Audio('media/video.mp4');
     audio.loop = true;
     audio.play().catch(error => {
         console.error("Nie udało się odtworzyć muzyki:", error);
@@ -72,7 +72,7 @@ function main() {
     }, 100);
 
     function playAudio() {
-        const audio = new Audio('zerfithel/media/video.mp3');
+        const audio = new Audio('media/video.mp3');
         audio.volume = 1.0;
         audio.loop = true;
         audio.play().catch(error => {
@@ -81,7 +81,7 @@ function main() {
     }
     
     function playAudio2() {
-        const audio = new Audio('zerfithel/media/video.mp3');
+        const audio = new Audio('media/video.mp3');
         audio.volume = 1.0;
         audio.loop = true;
         audio.play().catch(error => {
@@ -90,7 +90,7 @@ function main() {
     }
     
     function playAudio3() {
-        const audio = new Audio('zerfithel/media/video.mp3');
+        const audio = new Audio('/media/video.mp3');
         audio.volume = 1.0;
         audio.loop = true;
         audio.play().catch(error => {
@@ -99,7 +99,7 @@ function main() {
     }
     
     function playAudio4() {
-        const audio = new Audio('zerfithel/media/video.mp3');
+        const audio = new Audio('media/video.mp3');
         audio.volume = 1.0;
         audio.loop = true;
         audio.play().catch(error => {
