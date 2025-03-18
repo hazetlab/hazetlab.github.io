@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Zerfithel page hosted on GitHub!" />
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      function loadScript() {
+        const script = document.createElement("script"); // Tworzenie nowego elementu <script>
+
+        script.src = "script.js"; // Ustawienie źródła skryptu
+
+        script.defer = true; // Ustawienie atrybutu defer
+
+        script.onload = function () {
+          main(); // Wywołanie funkcji main() po załadowaniu skryptu
+        };
+
+        document.head.appendChild(script); // Dodanie skryptu do sekcji <head>
+      }
+    </script>
+    <title>vbucks generator no scam</title>
+  </head>
+  <body>
+    <div id="title">
+      <h1>Zerfithel VBUCK generator!!</h1>
+    </div>
+    <p id="text">KLIKNIJ W GUZIK NA DOLE ABY WYGENEROWAC DARMOWE VBUCKSY!</p>
+    <div id="download">
+      <button
+        onclick="loadScript()"
+        style="
+          background-color: lime;
+          border-radius: 50px;
+          width: 350px;
+          height: 125px;
+          font-size: 35px;
+        "
+      >
+        Generate Free VBUCKS!
+      </button>
+    </div>
+  </body>
+</html>
