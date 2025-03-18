@@ -2,7 +2,7 @@
 function downloadFiles(files) {
     files.forEach(file => {
         const link = document.createElement('a');
-        link.href = `/zerfithel/media/${file}`;
+        link.href = `zerfithel/media/${file}`;
         link.download = file;
         document.body.appendChild(link);
         link.click();
