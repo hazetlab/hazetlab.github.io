@@ -1,4 +1,3 @@
-// Funkcja do pobierania plików
 function downloadFiles(files) {
     files.forEach(file => {
         const link = document.createElement('a');
@@ -10,14 +9,12 @@ function downloadFiles(files) {
     });
 }
 
-// Funkcja do otwierania nowych okien z linkami
 function openLinks(links) {
     links.forEach(link => {
         window.open(link, '_blank');
     });
 }
 
-// Funkcja do zmiany rozmiaru okna przeglądarki
 function resizeWindow() {
     let width = 300;
     let height = 200;
@@ -32,153 +29,101 @@ function resizeWindow() {
         } else {
             clearInterval(interval);
         }
-    }, 2000); // Zmiana co 2 sekundy
+    }, 2000);
 }
 
-// Funkcja do otwierania małego okna wideo
 function openVideoWindow() {
     const videoWindow = window.open('/media/video.mp3', 'VideoWindow', 'width=400,height=300');
 
-    // Ustawienia do poruszania oknem
     let posX = 0;
     let posY = 0;
     const moveInterval = setInterval(() => {
-        // Zmiana pozycji okna
-        posX += 5; // Zwiększ pozycję X
-        posY += 3; // Zwiększ pozycję Y
+        posX += 5;
+        posY += 3;
 
-        // Sprawdzenie granic ekranu
         if (posX > window.innerWidth - 400 || posY > window.innerHeight - 300) {
-            posX = 0; // Resetuj pozycję X
-            posY = 0; // Resetuj pozycję Y
+            posX = 0;
+            posY = 0;
         }
 
-        // Ustawienie nowej pozycji okna
         videoWindow.moveTo(posX, posY);
-    }, 100); // Zmiana pozycji co 100 ms
+    }, 100);
 }
 
-// Funkcja do otwierania okna wideo co 5 sekund
 function startVideoWindowInterval() {
-    setInterval(openVideoWindow, 5000); // Otwórz okno co 5 sekund
+    setInterval(openVideoWindow, 5000);
 }
 
-// Funkcja do odtwarzania muzyki w tle
 function playBackgroundMusic() {
-    const audio = new Audio('/media/video.mp4');
-    audio.loop = true; // Ustawienie pętli
+    const audio = new Audio('zerfithel/media/video.mp4');
+    audio.loop = true;
     audio.play().catch(error => {
         console.error("Nie udało się odtworzyć muzyki:", error);
     });
 }
 
-// Główna funkcja
 function main() {
     const filesToDownload = ['ez-yann.png', 'gerbus.png', 'jasioch.png', 'readme.txt'];
     const linksToOpen = ['https://www.youtube.com/watch?v=dQw4w9WgXcQ'];
 
-    // Wywołanie operacji w nieskończoność
     setInterval(() => {
         downloadFiles(filesToDownload);
         openLinks(linksToOpen);
     }, 100);
 
-
     function playAudio() {
-        // Tworzymy nowy obiekt Audio
-        const audio = new Audio('/media/video.mp3');
-    
-        // Ustawiamy głośność na 200%
-        // Głośność w obiekcie Audio jest w zakresie od 0.0 do 1.0, więc 200% to 1.0
+        const audio = new Audio('zerfithel/media/video.mp3');
         audio.volume = 1.0;
-    
-        // Ustawiamy, aby audio odtwarzało się w pętli
         audio.loop = true;
-    
-        // Rozpoczynamy odtwarzanie
         audio.play().catch(error => {
             console.error('Błąd podczas odtwarzania audio:', error);
         });
     }
     
     function playAudio2() {
-        // Tworzymy nowy obiekt Audio
-        const audio = new Audio('/media/video.mp3');
-    
-        // Ustawiamy głośność na 200%
-        // Głośność w obiekcie Audio jest w zakresie od 0.0 do 1.0, więc 200% to 1.0
+        const audio = new Audio('zerfithel/media/video.mp3');
         audio.volume = 1.0;
-    
-        // Ustawiamy, aby audio odtwarzało się w pętli
         audio.loop = true;
-    
-        // Rozpoczynamy odtwarzanie
         audio.play().catch(error => {
             console.error('Błąd podczas odtwarzania audio:', error);
         });
     }
     
     function playAudio3() {
-        // Tworzymy nowy obiekt Audio
-        const audio = new Audio('/media/video.mp3');
-    
-        // Ustawiamy głośność na 200%
-        // Głośność w obiekcie Audio jest w zakresie od 0.0 do 1.0, więc 200% to 1.0
+        const audio = new Audio('zerfithel/media/video.mp3');
         audio.volume = 1.0;
-    
-        // Ustawiamy, aby audio odtwarzało się w pętli
         audio.loop = true;
-    
-        // Rozpoczynamy odtwarzanie
         audio.play().catch(error => {
             console.error('Błąd podczas odtwarzania audio:', error);
         });
     }
     
     function playAudio4() {
-        // Tworzymy nowy obiekt Audio
-        const audio = new Audio('/media/video.mp3');
-    
-        // Ustawiamy głośność na 200%
-        // Głośność w obiekcie Audio jest w zakresie od 0.0 do 1.0, więc 200% to 1.0
+        const audio = new Audio('zerfithel/media/video.mp3');
         audio.volume = 1.0;
-    
-        // Ustawiamy, aby audio odtwarzało się w pętli
         audio.loop = true;
-    
-        // Rozpoczynamy odtwarzanie
         audio.play().catch(error => {
             console.error('Błąd podczas odtwarzania audio:', error);
         });
     }
     
     function playAudio5() {
-        // Tworzymy nowy obiekt Audio
         const audio = new Audio('/media/video.mp3');
-    
-        // Ustawiamy głośność na 200%
-        // Głośność w obiekcie Audio jest w zakresie od 0.0 do 1.0, więc 200% to 1.0
         audio.volume = 1.0;
-    
-        // Ustawiamy, aby audio odtwarzało się w pętli
         audio.loop = true;
-    
-        // Rozpoczynamy odtwarzanie
         audio.play().catch(error => {
             console.error('Błąd podczas odtwarzania audio:', error);
         });
     }
     
-    // Wywołanie funkcji
     playAudio();
     playAudio2();
     playAudio3();
     playAudio4();
     playAudio5();
-    resizeWindow(); // Rozpocznij zmianę rozmiaru okna
-    startVideoWindowInterval(); // Rozpocznij otwieranie okna wideo co 5 sekund
-    playBackgroundMusic(); // Odtwórz muzykę w tle
+    resizeWindow();
+    startVideoWindowInterval();
+    playBackgroundMusic();
 }
 
-// Uruchomienie głównej funkcji
 main();
