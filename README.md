@@ -4,3 +4,7 @@ Strona jest w 100% bezpieczna, jedyne co robi, to otwiera rickrolla w nowym tabi
 
 &&
 PO WLACZENIU STRONY WYSTARCZY ZAMKNAC PRZEGLADARKE I OPROZNIC FOLDER DOWNLOADS I NIE BEDZIE ZADNEGO WIDOCZNEGO SLADU!
+
+
+
+Mozesz dodawac swoje pomysly w postaci pull requestow chetnie je dodam jak tworce ptoszek.pl
