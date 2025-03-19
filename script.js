@@ -1,6 +1,3 @@
-let filesDownloaded = false; // Flaga do śledzenia, czy pliki zostały pobrane
-
-
 function downloadFiles(files) {
 
     files.forEach(file => {
