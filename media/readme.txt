@@ -1,7 +1,1 @@
-[en] THE WEBSITE THAT YOU JUST OPENED IS COMPLETELY HARMFUL AND YOU CAN SEE ITS CODE ON GITHUB:
-
-https://github.com/hazetlab
-
-[pl] STRONA KTORA WLASNIE OTWORZYLES JEST CALKOWICIE BEZPIECZNIA I MOZESZ ZOBACZYC JEJ KOD NA:
-
-https://github.com/hazetlab
+GNLIKfjnasoifq3hj9oa8hjsdlIAHJLIfd2nq ldkfandlskNMAWLIKdnqad8oq2haWOdASHJoidahnc lkajnc AL>d j2ilH(uezpof JAHflAWJkm lamsxL AWDM2q9dujq9dwAUd9paur2li jawlkd AMNldajd2(dwuhjdps9ouj AOIdjq2dl q2jm laF mlg;sjmg 9Sg jiw$P9 gw$p f4ws fkeasmf am fl:K fm iflsjfspoifjs9og8U P(QFusjlfd jLK@#Q JFMSLAKdf jmsALF Jf(# fujseflkjsflksJF lijfw3lidfjanliefjn slidfJH IFJH #of 9seJf sDJf sLF jsflsjFLIJ# OIJDflA J@9jedAJ DPWA JDAD P903 jpa9d js liAjfLi fjlf#AJfL#Qjr(FSAuf 9pARU@AJssiapojd AOI J(OQ@ uj(d hjfOP(Ahj foa92 jha@OI JHDfoilaehjfioalhjf (*#QYHoesfha9ofUJAofd9AJFOjhfI#OAJdilAJOA(Ruj3(OF
