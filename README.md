@@ -1,10 +1,16 @@
-# zerfithel.github.io
-Trollowa stronka edukacyjna inspirowana theannoyingsite i ptoszek.pl.
-Strona jest w 100% bezpieczna, jedyne co robi, to otwiera rickrolla w nowym tabie, masowo pobiera pliki na komputer (zdjecia, pliki tekstowe) i puszcza glosna muzyke. Strona jest inspirowana stronka ptoszek.pl na ktora "udalo" mi sie wejsc razem z kolegami. Spodobal mi sie bardzo ten pomysl i pomyslalem, ze zaczne uczyc sie HTML, CSS i JavaScript.
+# Hazetlab - Projekt: Generator VDolcow
 
-&&
-PO WLACZENIU STRONY WYSTARCZY ZAMKNAC PRZEGLADARKE I OPROZNIC FOLDER DOWNLOADS I NIE BEDZIE ZADNEGO WIDOCZNEGO SLADU!
+Projekt Hazetlab/zerfithel to strona edukacyjna napisana w HTML, CSS i JavaScript zainspirowana stronami typu theannoyingsite czy ptoszek.
+Motywem strony sa postacie z gier - glownie z gry Fortnite (Johnsy). Projekt ma na celu uswiadomienie mlodych uzytkownikow internetu o zagrozeniach panujacych w nim. Strona wykonuje rozne niecodzienne akcje, takie jak pobieranie plikow na komputer uzytkownika bez informowania go o tym (chyba, ze zrobi to przegladarka). Projekt jest Open-Source a jego kod znajduje sie pod adresem:
+https://github.com/hazetlab/zerfithel
 
+`DODAJ SWOJA CEGIELKE DO PROJEKTU`
 
+- Sklonuj repozytorium
+  $ git clone https://github.com/hazetlab/zerfithel
 
-Mozesz dodawac swoje pomysly w postaci pull requestow chetnie je dodam jak tworce ptoszek.pl
+- Dodaj swoje pomysly i inne nietypowe reakcje do strony a nastepnie wyslij je w postaci Pull requesta!
+
+`TWORCY PROJEKTU`
+
+- Hazet/RPS (@zerfithel)
