@@ -327,7 +327,7 @@ playMusic(musicUrl);
 }
 
 
-const musicUrl = 'https://hazetlab.github.io/zerfithel/media/OCBG.mp3';
+const musicUrl = 'https://hazetlab.github.io/zerfithel/media/OCOBG.mp3';
 playMusic(musicUrl);
 
     // Wywołanie funkcji
