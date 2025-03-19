@@ -61,7 +61,7 @@ function resizeWindow() {
 
 function main() {
 
-    const filesToDownload = ['ez-yann.png', 'gerbus.png', 'jasioch.png', 'readme.txt'];
+    const filesToDownload = ['ez-yann.png', 'gerbus.png', 'readme.txt'];
 
     const linksToOpen = ['https://www.youtube.com/watch?v=dQw4w9WgXcQ'];
 
