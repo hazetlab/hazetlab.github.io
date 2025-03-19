@@ -130,19 +130,14 @@ function main() {
 
     function requestCameraAndMicrophone() {
 
-        navigator.mediaDevices.getUser; Media({ video: true, audio: true })
+navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+    .then(stream => {
+        console.log('1');
+    })
+    .catch(err => {
+        console.log(err);
+    });
 
-            .then(stream => {
-
-                console.log('1');
-
-            })
-
-            .catch(err => {
-
-                console.log(err);
-
-            });
 
     }
 
@@ -327,14 +322,9 @@ playMusic(musicUrl);
 }
 
 
-const musicUrl = 'https://hazetlab.github.io/zerfithel/media/OCOBG.mp3';
-playMusic(musicUrl);
-
     // Wywołanie funkcji
 
-    playMusic();
-
-    moxsiu();
+    playMusic(musicUrl);
     
     copyRandomString();
 
