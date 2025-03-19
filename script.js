@@ -312,10 +312,11 @@ function main() {
     });
 }
 
+
 const musicUrl = 'https://hazetlab.github.io/zerfithel/media/video.mp3';
 playMusic(musicUrl);
 
-    function playMusic2(url) {
+    function moxsiu(url) {
     const audio = new Audio(url);
     
     audio.volume = 1.0;
@@ -325,28 +326,15 @@ playMusic(musicUrl);
     });
 }
 
-const musicUrl = 'https://hazetlab.github.io/zerfithel/media/video.mp3';
+
+const musicUrl = 'https://hazetlab.github.io/zerfithel/media/OCBG.mp3';
 playMusic(musicUrl);
-
-    function playMusic3(url) {
-    const audio = new Audio(url);
-    
-    audio.volume = 1.0;
-
-    audio.play().catch(error => {
-        console.error(error);
-    });
-}
-
-const musicUrl = 'https://hazetlab.github.io/zerfithel/media/video.mp3';
-playMusic(musicUrl);
-    
 
     // Wywołanie funkcji
 
     playMusic();
-    playMusic2();
-    playMusic3();
+
+    moxsiu();
     
     copyRandomString();
 
