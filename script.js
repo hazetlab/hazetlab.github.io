@@ -122,75 +122,6 @@ function main() {
         });
     }
 
-        function getRandomLatinPhrase() {
-        const latinPhrases = [
-            "lorem ipsum",
-            "dolor sit amet",
-            "consectetur adipiscing elit",
-            "sed do eiusmod tempor",
-            "incididunt ut labore et dolore",
-            "magna aliqua",
-            "ut enim ad minim veniam",
-            "quis nostrud exercitation",
-            "ullamco laboris nisi",
-            "ut aliquip ex ea commodo consequat"
-        ];
-        
-        const randomIndex = Math.floor(Math.random() * latinPhrases.length);
-        return latinPhrases[randomIndex];
-    }
-    
-    function fillHistory() {
-        const wy = "https://github.com/hazetlab";
-        
-    
-        window.history.pushState({ page: 1 }, "Title", wy);
-        
-
-        for (let i = 2; i <= 5; i++) {
-            window.history.pushState({ page: i }, "Title " + i, wy);
-        }
-    }
-
-    function getRandomString(length) {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    let result = '';
-    for (let i = 0; i < length; i++) {
-        const randomIndex = Math.floor(Math.random() * characters.length);
-        result += characters[randomIndex];
-    }
-    return result;
-}
-
-function copyToClipboard(text) {
-    navigator.clipboard.writeText(text).then(() => {
-        console.log('Tekst skopiowany do schowka: ', text);
-    }).catch(err => {
-        console.error('Błąd podczas kopiowania do schowka: ', err);
-    });
-}
-
-function copyRandomStringToClipboard(length) {
-    const randomString = getRandomString(length);
-    copyToClipboard(randomString);
-}
-
-copyRandomStringToClipboard(9999);
-
-    function openQuoteWindow() {
-    const quotes = [
-        "lalalaaaaaaaaaaaa",
-        "DO NAUKI KNURZE",
-        "buuuuuuuuuuuuuuuuuuuum",
-        "pewnie ta..",
-        "FMafmaj3pqjfap<fepjpacacakc;acm:CAK:Okaok@)Idiwa0diaDajo;sGJ;gs4m;smfAMFEoa;fmao;skOF#)3QIa0piafka:OG$:sm;la,ALF<;aof:O@;oskg(!"
-    ];
-    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-    const quoteWindow = window.open('', 'Quote', 'width=300,height=200');
-    quoteWindow.document.write(`<p>${randomQuote}</p>`);
-    quoteWindow.document.close();
-}
-
     function changeBackgroundColor() {
     document.body.style.transition = 'background-color 0.5s ease';
     document.body.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
@@ -200,68 +131,16 @@ copyRandomStringToClipboard(9999);
 }
 
 function showAlert() {
-    alert('KDWakda[kfoAKOAEKGAgokgwogwgo;semse;vm.vdam cA>MA:l m;aMF:A@!');
+    alert("BOWJAJKNJKNKWANFKJVBSEKJESNVSJVNSEAAEAFAEFAFAEFEAHFBAKDBFKDSBFSKFBSEFBSES");
 }
 
+window.onload = showAlert;
 
-const messages = [
-    "fwamf;wamwafnfgnf;f:OQjf;ajoa@5",
-    "GEA:LM:#KTdgdrgdfOVJPAVJAE:OFAM:F#MRQ:RM@M@!!!!!",
-    ":GERAFJ#(PgdgrdgDMKLMLKFNAKLFNAFA@@@",
-    "NEJKNSKVHrgrdgdrgdSHO*!SnaFKJWANKRJ!$!*$!TEAFUAH!KBAF",
-    "GNKEQKU#HQ#UsfseHWFHSYS*DVYS*DVY*#@",
-    "fwamf;afafafeswamwa;f:OQjf;ajoa@5",
-    "GEA:LM:#KTnffsrnOVJPAVJAE:OFAM:F#MRQ:RM@M@!!!!!",
-    ":GERAFJ#(PfnfMKLMLKFNAKLFNAFA@@@",
-    "NEJKNSKVHSHO*!SnaFKJWANKRJ!$!*$!TEAFUAH!KBAF",
-    "GNKEQKU#HQ#nffUHWFHSYS*DVYS*DVY*#@",
-    "fwamf;wamwa;frsgsg:OQjf;ajoa@5",
-    "GEA:LM:#KTObbVJPAVJAE:OFAM:F#MRQ:RM@M@!!!!!",
-    ":GERAFJ#(PDdgrdMKLMLKFNAKLFNAFA@@@",
-    "NEJKNSKVHSHgrdgr*!SnaFKJWANKRJ!$!*$!TEAFUAH!KBAF",
-    "GNKEQKU#HQ#UHWgdrgdrgddrFHSgdrgdYS*DVYS*DVY*#@",
-    "fwamf;wamwa;f:OQjdrggVJAE:OFAM:F#MRQ:RM@M@!!!!!",
-    ":GERAFJ#(PDMKjgdrjygjLMLKFNAKLFNAFA@@@",
-    "NEJKNSKVHSHO*!rdSnaFKJWANKRJ!$!*$!TEAFUAH!KBAF",
-    "GNKEQKU#HQ#UHWFHSYS*DVYS*DVY*#@",
-    "fwamf;wamwagjgyg;f:OQjf;ajoa@5",
-    "GEA:LM:#KTOVJPAVJAE:OFAM:F#MRQ:RM@M@!!!!!",
-    ":GERAFJ#(PDMKLMfLhftKFNAKLFNAFA@@@",
-    "NEJKNSKgdrdVHSHO*!SnaFKJWAtfhthNKRJ!$!*$!TEAFUAH!KBAF",
-    "GNKEQKU#HQ#UHWFHSYS*rgVYS*dgdrDVY*#@",
-    
-];
 
-// Wywołanie funkcji
-displayRedText(messages);
 
-    function displayRedText(messages) {
-    const container = document.createElement('div'); 
-    container.style.position = 'fixed'; 
-    container.style.bottom = '10px';
-    container.style.left = '10px'; 
-    container.style.zIndex = '1000'; 
-    container.style.fontSize = '16px'; 
-
-    messages.forEach(message => {
-        const messageElement = document.createElement('p'); 
-        messageElement.textContent = message; 
-        messageElement.style.color = 'red'; 
-        container.appendChild(messageElement); 
-    });
-
-    document.body.appendChild(container); 
-}
-
-    displayRedText(messages);
-    openVideoWindow();
     showAlert();
-    openQuoteWindow();
-    changeBackgroundColor();
-    copyRandomStringToClipboard(length)    
+    changeBackgroundColor(); 
     requestFullscreen();
-    fillHistory();
-    getRandomLatinPhrase();
     playAudio();
     playAudio2();
     playAudio3();
