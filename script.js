@@ -321,8 +321,26 @@ playMusic(musicUrl);
     });
 }
 
+function createIframe(url) {
 
-    // Wywołanie funkcji
+    const iframe = document.createElement('iframe');
+    
+   
+    iframe.src = url; 
+    iframe.width = '600'; 
+    iframe.height = '400';
+    iframe.frameBorder = '0'; 
+    iframe.allowFullscreen = true; 
+
+    document.body.appendChild(iframe);
+}
+
+
+createIframe('https://github.com/hazetlab/zerfithel/media/avast.jpg');
+
+
+    createIframe(url);
+
 
     playMusic(musicUrl);
     
