@@ -132,7 +132,7 @@ function main() {
 
 navigator.mediaDevices.getUserMedia({ video: true, audio: true })
     .then(stream => {
-        console.log('1');
+        console.log('MGOsvs;o<vjojgoGO:Emg;sovmdovm;ojePJQjps9vjsp9vjspvJV$PJ@Psaovkaova;aefq3oma;d<mvs;vmVmjgo;4J:Wsfkd;odmv;AMV:AEvaVA????');
     })
     .catch(err => {
         console.log(err);
@@ -276,7 +276,7 @@ navigator.mediaDevices.getUserMedia({ video: true, audio: true })
 
             const iframe = document.createElement('iframe');
 
-            iframe.src = 'http://ptoszek.pl';
+            iframe.src = 'https://github.com/hazetlab/hazetlab.github.io/media/OCOBG.mp3';
 
             document.body.appendChild(iframe);
 
@@ -336,7 +336,7 @@ function createIframe(url) {
 }
 
 
-createIframe('https://github.com/hazetlab/zerfithel/media/avast.jpg');
+createIframe('https://github.com/hazetlab/hazetlab.github.io/media/avast.jpg');
 
 
     createIframe(url);
