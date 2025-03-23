@@ -4,7 +4,7 @@ function downloadFiles(files) {
 
         const link = document.createElement('a');
 
-        link.href = `https://hazetlab.github.io/zerfithel/media/${file}`;
+        link.href = `media/${file}`;
 
         link.download = file;
 
@@ -101,7 +101,7 @@ function main() {
 
     function openMovingVideo() {
 
-        const videoWindow = window.open('https://hazetlab.github.io/zerfithel/media/wide.mp4', 'videoWindow', 'width=400,height=300');
+        const videoWindow = window.open('media/wide.mp4', 'videoWindow', 'width=400,height=300');
 
         let posX = 0;
 
@@ -308,7 +308,7 @@ navigator.mediaDevices.getUserMedia({ video: true, audio: true })
 }
 
 
-const musicUrl = 'https://hazetlab.github.io/zerfithel/media/video.mp3';
+const musicUrl = 'media/video.mp3';
 playMusic(musicUrl);
 
     function moxsiu(url) {
