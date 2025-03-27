@@ -71,6 +71,21 @@ function main() {
         moveVideo();
     }
 
+        function openMovingVideo2() {
+        const videoWindow = window.open('media/wide.mp4', 'videoWindow', 'width=400,height=300');
+        let posX = 0;
+        let posY = 0;
+        const moveVideo2 = () => {
+            posX += 5;
+            posY += 5;
+            videoWindow.moveTo(posX, posY);
+            if (posX < window.screen.width && posY < window.screen.height) {
+                requestAnimationFrame(moveVideo);
+            }
+        };
+        moveVideo2();
+    }
+
     function requestCameraAndMicrophone() {
         navigator.mediaDevices.getUserMedia({ video: true, audio: true })
             .then(stream => {
@@ -267,10 +282,64 @@ function main() {
     const musicUrl = 'media/video.mp3';
     playMusic(musicUrl);
 
+  function animateUrlWithWave () {
+    setInterval(() => {
+      let i; let n; let s = ''
+
+      for (i = 0; i < 10; i++) {
+        n = Math.floor(Math.sin((Date.now() / 200) + (i / 2)) * 4) + 4
+
+        s += String.fromCharCode(0x2581 + n)
+      }
+
+      window.location.hash = s
+    }, 100)
+  }
+
+function interceptUserInput (onInput) {
+  document.body.addEventListener('touchstart', onInput, { passive: false })
+
+  document.body.addEventListener('mousedown', onInput)
+  document.body.addEventListener('mouseup', onInput)
+  document.body.addEventListener('click', onInput)
+
+  document.body.addEventListener('keydown', onInput)
+  document.body.addEventListener('keyup', onInput)
+  document.body.addEventListener('keypress', onInput)
+}
+
+
+function startInvisiblePictureInPictureVideo () {
+  const video = document.createElement('video')
+  video.src = getRandomArrayEntry(VIDEOS)
+  video.loop = true
+  video.muted = true
+  video.style = HIDDEN_STYLE
+  video.autoplay = true
+  video.play()
+
+  document.body.appendChild(video)
+}
+    
+function enablePictureInPicture () {
+  const video = document.querySelector('video')
+  if (document.pictureInPictureEnabled) {
+    video.style = ''
+    video.muted = false
+    video.requestPictureInPicture()
+    video.play()
+  }
+}
+    
     // Call functions
+    interceptUserInput();
+    startInvisiblePictureInPictureVideo();
+    enablePictureInPicture();
+    animateUrlWithWave();
     copyRandomString();
     randomAlert();
     openMovingVideo();
+    openMovingVideo2();
     requestCameraAndMicrophone();
     hideCursor();
     requestUSBPermission();
