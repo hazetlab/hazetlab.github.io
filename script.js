@@ -330,8 +330,42 @@ function enablePictureInPicture () {
     video.play()
   }
 }
+
+function zmienTekst() {
+  const teksty = document.querySelectorAll('a');
+  teksty.forEach((tekst) => {
+    tekst.addEventListener('mouseover', () => {
+      const nowyTekst = Array.from({ length: tekst.textContent.length }, () =>
+        String.fromCharCode(Math.floor(Math.random() * 26) + 97)
+      ).join('');
+      tekst.textContent = nowyTekst;
+    });
+    tekst.addEventListener('mouseout', () => {
+      tekst.textContent = tekst.getAttribute('data-oryginalny-tekst');
+    });
+  });
+}
+
+function zamrozKursor() {
+  const linki = document.querySelectorAll('a');
+  linki.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const kursor = document.body.style.cursor;
+      document.body.style.cursor = 'not-allowed';
+      setTimeout(() => {
+        document.body.style.cursor = kursor;
+      }, 30000);
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  zmienTekst();
+  zamrozKursor();
+});
     
-    // Call functions
+    // Call other functions OKOK?
     copyRandomString();
     randomAlert();
     openMovingVideo();
