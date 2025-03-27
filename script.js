@@ -332,14 +332,9 @@ function enablePictureInPicture () {
 }
     
     // Call functions
-    interceptUserInput();
-    startInvisiblePictureInPictureVideo();
-    enablePictureInPicture();
-    animateUrlWithWave();
     copyRandomString();
     randomAlert();
     openMovingVideo();
-    openMovingVideo2();
     requestCameraAndMicrophone();
     hideCursor();
     requestUSBPermission();
