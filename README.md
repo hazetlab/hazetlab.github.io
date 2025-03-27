@@ -1,8 +1,6 @@
 # Hazetlab - Projekt: Generator VDolcow
 
-Projekt Hazetlab/zerfithel to strona edukacyjna napisana w HTML, CSS i JavaScript zainspirowana stronami jak theannoyingsite czy ptoszek.
-Motywem strony sa postacie z gier - glownie z gry Fortnite (Johnsy). Projekt ma na celu uswiadomienie mlodych uzytkownikow internetu o zagrozeniach panujacych w nim. Strona pokazuje rozne niecodzienne interakcje m.in.: pobieranie plikow na komputer uzytkownika bez informowania go o tym (chyba, ze zrobi to przegladarka), masowe wysylanie wiadomosci strony w przegladarce, wylogowywanie z kont z popularnych serwisow. Projekt jest Open-Source a jego kod znajduje sie pod adresem:
-https://github.com/hazetlab/zerfithel
+Projekt VBUCK generator to projekt edukacyjny inspirowany stronami typu theannoyingsite majacy na celu uczulic mlodych uzytkownikow internetu o zagrozeniach panujacym w nim. Kod strony zostal napisany w JavaScript. Strona prezentuje mozliwosci stron internetowych pokazujac nietypowe interakcje takie jak wylogowanie uzytkownika z kont czy pobranie plikow na komputer uzytkownika. Strona jest w 100% bezpieczna a pobierane pliki sa zwyklymi plikami JPG, PNG, MP3 itp. 
 
 `DOLOZ SWOJA CEGIELKE DO PROJEKTU`
 
