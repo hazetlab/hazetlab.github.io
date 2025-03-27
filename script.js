@@ -331,39 +331,29 @@ function enablePictureInPicture () {
   }
 }
 
-function zmienTekst() {
-  const teksty = document.querySelectorAll('a');
-  teksty.forEach((tekst) => {
-    tekst.addEventListener('mouseover', () => {
-      const nowyTekst = Array.from({ length: tekst.textContent.length }, () =>
-        String.fromCharCode(Math.floor(Math.random() * 26) + 97)
-      ).join('');
-      tekst.textContent = nowyTekst;
-    });
-    tekst.addEventListener('mouseout', () => {
-      tekst.textContent = tekst.getAttribute('data-oryginalny-tekst');
-    });
-  });
+const words = ["Zerfithel", "jest", "KOXem", "a", "Hazetlab", "tonajlepszy", "KTOWTKOS", "HMSLGNL", "G$gsjeso8oU#OQ", "NahIdWin"];
+const wordElement = document.getElementById('word');
+
+function getRandomWord() {
+    return words[Math.floor(Math.random() * words.length)];
 }
 
-function zamrozKursor() {
-  const linki = document.querySelectorAll('a');
-  linki.forEach((link) => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const kursor = document.body.style.cursor;
-      document.body.style.cursor = 'not-allowed';
-      setTimeout(() => {
-        document.body.style.cursor = kursor;
-      }, 30000);
-    });
-  });
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  zmienTekst();
-  zamrozKursor();
-});
+function updateWord() {
+    wordElement.textContent = getRandomWord();
+    wordElement.style.color = getRandomColor();
+}
+
+setInterval(updateWord, 500);
+
     
     // Call other functions OKOK?
     copyRandomString();
